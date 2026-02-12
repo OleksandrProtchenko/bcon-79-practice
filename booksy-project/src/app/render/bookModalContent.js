@@ -1,4 +1,8 @@
+import { checkCartLs } from "../utils/checkCartLs";
+
 export function renderBookModalContent(bookData = {}, el) {
+  const { btnContent, btnDataAction } = checkCartLs(bookData._id);
+
   const markup = `
   <div class="book-modal-content" data-book-id="${bookData._id}">
     <div class="book-modal-left">
@@ -14,7 +18,7 @@ export function renderBookModalContent(bookData = {}, el) {
         <p class="author">${bookData.author}</p>
         <p class="price">$${bookData.price}</p>
         <div class="btn-wrapper">
-        <button class="modal-btn btn-primary" type="button">Add To Cart</button>
+        <button class="modal-btn btn-primary" type="button" data-cart-button="${btnDataAction}">${btnContent}</button>
         <button class="modal-btn btn-secondary" type="button">Buy Now</button>
         </div>
         <details>
