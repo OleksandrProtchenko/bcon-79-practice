@@ -3,9 +3,7 @@ import { request } from "./http";
 export function fetchCategories() {
   return request("/categories");
 }
-export function fetchFurnitures() {
-  return request("/furnitures");
-}
+
 export function fetchFurnituresId(id) {
   return request(`/furnitures/${id}`);
 }
