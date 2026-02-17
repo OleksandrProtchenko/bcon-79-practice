@@ -31,6 +31,5 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px 24px;
-}
-.products-list-item {
+  margin-bottom: 32px;
 }

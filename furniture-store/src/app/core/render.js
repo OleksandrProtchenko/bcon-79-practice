@@ -1,3 +1,4 @@
+import { initLoadMoreBtn } from "../components/load-more-btn/load-more-btn";
 import { onFilterClick } from "../components/product-filter/product-filter.handlers";
 
 export function renderCategories(markup) {
@@ -17,4 +18,13 @@ export function renderCategories(markup) {
 export function renderFurnitures(markup) {
   const productList = document.querySelector(".js-product-list");
   productList.innerHTML = markup;
+}
+
+export function renderLoadMoreBtn() {
+  initLoadMoreBtn();
+}
+
+export function renderMoreFurnitures(markup) {
+  const productList = document.querySelector(".js-product-list");
+  productList.insertAdjacentHTML("beforeend", markup);
 }

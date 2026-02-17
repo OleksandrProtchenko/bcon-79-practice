@@ -1,8 +1,11 @@
 import { fetchFurnitures } from "../../api/furnitures-api";
+import { state } from "../../app";
 import "./products-card.css";
 
-export async function loadFurnitures(categoryId = "") {
-  const { furnitures } = await fetchFurnitures(categoryId);
+export async function loadFurnitures() {
+  const { furnitures, totalItems } = await fetchFurnitures();
+  state.totalPages = totalItems;
+
   return furnitures.map(createCardMarkup).join("");
 }
 
